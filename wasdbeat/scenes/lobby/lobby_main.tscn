@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0j1xx5plk4ie"]
+
+[ext_resource type="Script" path="res://scenes/lobby/lobby_main.gd" id="1_jthy4"]
+[ext_resource type="PackedScene" uid="uid://cf8qeptkvo1k2" path="res://scenes/lobby/lobby_escape.tscn" id="2_gc2vh"]
+
+[node name="LobbyMain" type="Node2D"]
+script = ExtResource("1_jthy4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+pivot_offset = Vector2(576, 324)
+color = Color(0.398793, 0.398793, 0.398793, 1)
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 362.0
+offset_top = 209.0
+offset_right = 790.0
+offset_bottom = 319.0
+theme_override_font_sizes/font_size = 80
+text = "WASDBEAT"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="PressAnyKey" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 369.0
+offset_top = 336.0
+offset_right = 783.0
+offset_bottom = 392.0
+theme_override_font_sizes/font_size = 40
+text = "Press any key to start"
+metadata/_edit_lock_ = true
+
+[node name="LobbyEscape" parent="." instance=ExtResource("2_gc2vh")]
+position = Vector2(576, -324)
+metadata/_edit_lock_ = true
+
+[connection signal="request_move_to_escape_game" from="." to="." method="_on_request_move_to_escape_game"]
+[connection signal="request_not_to_escape" from="." to="." method="_on_request_not_to_escape"]
+[connection signal="request_game_continue" from="LobbyEscape" to="." method="_on_request_not_to_escape"]
+[connection signal="request_game_escape" from="LobbyEscape" to="." method="_on_lobby_escape_request_game_escape"]
