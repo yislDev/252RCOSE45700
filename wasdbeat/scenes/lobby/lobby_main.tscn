@@ -39,6 +39,7 @@ metadata/_edit_lock_ = true
 position = Vector2(576, -324)
 metadata/_edit_lock_ = true
 
+[connection signal="request_escape_game" from="." to="." method="_on_lobby_escape_request_game_escape"]
 [connection signal="request_move_to_escape_game" from="." to="." method="_on_request_move_to_escape_game"]
 [connection signal="request_not_to_escape" from="." to="." method="_on_request_not_to_escape"]
 [connection signal="request_game_continue" from="LobbyEscape" to="." method="_on_request_not_to_escape"]

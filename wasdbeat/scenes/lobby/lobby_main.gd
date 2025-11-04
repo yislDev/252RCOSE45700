@@ -4,6 +4,7 @@ class_name LobbyMain
 signal request_move_to_lobby_select()
 signal request_move_to_escape_game()
 signal request_not_to_escape()
+signal request_escape_game()
 
 enum GAMESTATE {LOBBY_MAIN, LOBBY_ESCAPE, LOBBY_SELECT}
 var game_state
@@ -19,12 +20,22 @@ func _process(delta: float) -> void:
 	# ESC pressed
 	
 	print(game_state)
-	if (game_state == GAMESTATE.LOBBY_MAIN and Input.is_action_just_pressed("key_escape")):
-		set_game_state(GAMESTATE.LOBBY_ESCAPE)
-		request_move_to_escape_game.emit()
-	elif (game_state == GAMESTATE.LOBBY_MAIN and Input.is_action_just_pressed("key_enter")):
-		set_game_state(GAMESTATE.LOBBY_SELECT)
-		request_move_to_lobby_select.emit()
+	if (game_state == GAMESTATE.LOBBY_MAIN):
+		if (Input.is_action_just_pressed("key_escape")):
+			set_game_state(GAMESTATE.LOBBY_ESCAPE)
+			request_move_to_escape_game.emit()
+			pass
+		elif (Input.is_action_just_pressed("key_enter")):
+			set_game_state(GAMESTATE.LOBBY_SELECT)
+			request_move_to_lobby_select.emit()
+			pass
+	elif (game_state == GAMESTATE.LOBBY_ESCAPE):
+		if (Input.is_action_just_pressed("key_escape")):
+			request_not_to_escape.emit()
+			pass
+		elif (Input.is_action_just_pressed("key_enter")):
+			request_escape_game.emit()
+			pass
 	pass
 	
 func set_game_state(state_to_set):
