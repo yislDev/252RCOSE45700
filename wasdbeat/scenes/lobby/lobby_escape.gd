@@ -3,14 +3,9 @@ class_name LobbyEscape
 
 signal request_game_escape()
 signal request_game_continue()
-signal request_get_game_state()
-
-enum GAMESTATE {LOBBY_MAIN, LOBBY_ESCAPE, LOBBY_SELECT}
-var game_state
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	game_state = GAMESTATE.LOBBY_MAIN
 	pass # Replace with function body.
 
 

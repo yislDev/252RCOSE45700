@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brlbo03d1bvjq"]
+
+[ext_resource type="Script" path="res://scenes/lobby/lobby_ui.gd" id="1_vb6pg"]
+[ext_resource type="PackedScene" uid="uid://b0j1xx5plk4ie" path="res://scenes/lobby/lobby_main.tscn" id="2_g7r4d"]
+
+[node name="LobbyUi" type="Node2D"]
+script = ExtResource("1_vb6pg")
+
+[node name="LobbyMain" parent="." instance=ExtResource("2_g7r4d")]
+
+[connection signal="request_escape_game" from="." to="LobbyMain" method="_on_lobby_ui_request_escape_game"]
+[connection signal="request_move_to_lobby_main_escape" from="." to="LobbyMain" method="_on_lobby_ui_request_move_to_lobby_main_escape"]
+[connection signal="request_move_to_lobby_select" from="." to="LobbyMain" method="_on_lobby_ui_request_move_to_lobby_select"]
+[connection signal="request_not_to_escape_from_lobby_main" from="." to="LobbyMain" method="_on_lobby_ui_request_not_to_escape_from_lobby_main"]
+[connection signal="request_escape_to_lobby_ui" from="LobbyMain" to="." method="_on_lobby_main_request_escape_to_lobby_ui"]
+[connection signal="request_not_to_escape_to_lobby_ui" from="LobbyMain" to="." method="_on_lobby_main_request_not_to_escape_to_lobby_ui"]
