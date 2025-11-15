@@ -22,6 +22,6 @@ horizontal_scroll_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="ColorRect/ScrollContainer"]
-custom_minimum_size = Vector2(576, 600)
+custom_minimum_size = Vector2(576, 432)
 layout_mode = 2
-color = Color(1, 0, 1, 1)
+color = Color(0.533333, 0.533333, 0.533333, 1)

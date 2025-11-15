@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://j0a53g0ekk7e"]
+
+[ext_resource type="Script" path="res://scenes/game_started/player_box.gd" id="1_atwqo"]
+[ext_resource type="Texture2D" uid="uid://uj3roi7r3u4m" path="res://resources/game/player_box_red.svg" id="2_bvtfu"]
+
+[node name="PlayerBox" type="Control"]
+custom_minimum_size = Vector2(79, 79)
+layout_mode = 3
+anchors_preset = 0
+offset_left = -39.5
+offset_top = -39.5
+offset_right = 39.5
+offset_bottom = 39.5
+script = ExtResource("1_atwqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_bvtfu")
+centered = false

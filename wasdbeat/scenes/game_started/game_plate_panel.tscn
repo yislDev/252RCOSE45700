@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://brnkwjg3n1uej"]
+
+[ext_resource type="Script" path="res://scenes/game_started/game_plate_panel.gd" id="1_tvs1x"]
+[ext_resource type="Texture2D" uid="uid://b0l6ys1phfv5e" path="res://resources/game/panel.svg" id="2_t6vh2"]
+
+[node name="GamePlatePanel" type="Control"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 75.0
+offset_bottom = 75.0
+script = ExtResource("1_tvs1x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_t6vh2")
+centered = false
