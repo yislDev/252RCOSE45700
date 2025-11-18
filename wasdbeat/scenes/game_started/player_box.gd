@@ -20,15 +20,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func move(dir: GameUI.DIR) -> void:
-	if (dir == GameUI.DIR.LEFT):
-		move_left(4)
-	elif (dir == GameUI.DIR.RIGHT):
-		move_right(4)
-	elif (dir == GameUI.DIR.UP):
-		move_up(4)
-	elif (dir == GameUI.DIR.DOWN):
-		move_down(4)
+func move(player_location) -> void:
+	location = player_location
+	update_position()
 	pass
 
 func move_left(num_columns: int = 4) -> void:

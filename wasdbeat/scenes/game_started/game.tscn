@@ -37,3 +37,4 @@ metadata/_edit_lock_ = true
 
 [connection signal="request_generate_note" from="." to="GamePlate" method="_on_game_request_generate_note"]
 [connection signal="request_move_player" from="." to="GamePlate" method="_on_game_request_move_player"]
+[connection signal="request_remove_note" from="." to="GamePlate" method="_on_game_request_remove_note"]

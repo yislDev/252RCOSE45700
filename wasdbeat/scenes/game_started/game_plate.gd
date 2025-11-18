@@ -19,7 +19,10 @@ func _on_game_request_generate_note(panel_index: int) -> void:
 	panel_list[panel_index].generate_note()
 	pass # Replace with function body.
 
+func _on_game_request_remove_note(panel_index: Variant) -> void:
+	panel_list[panel_index].remove_note()
+	pass # Replace with function body.
 
-func _on_game_request_move_player(dir: GameUI.DIR) -> void:
-	$PlayerBox.move(dir)
+func _on_game_request_move_player(player_location: Vector2) -> void:
+	$PlayerBox.move(player_location)
 	pass # Replace with function body.
