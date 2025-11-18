@@ -4,8 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://brnkwjg3n1uej" path="res://scenes/game_started/game_plate_panel.tscn" id="2_kc6kx"]
 [ext_resource type="PackedScene" uid="uid://j0a53g0ekk7e" path="res://scenes/game_started/player_box.tscn" id="2_m5pdo"]
 
-[node name="GamePlate" type="Node2D"]
+[node name="GamePlate" type="Node2D" node_paths=PackedStringArray("panel_list")]
 script = ExtResource("1_itk3g")
+panel_list = [NodePath("GridContainer/Panel11"), NodePath("GridContainer/Panel12"), NodePath("GridContainer/Panel13"), NodePath("GridContainer/Panel14"), NodePath("GridContainer/Panel21"), NodePath("GridContainer/Panel22"), NodePath("GridContainer/Panel23"), NodePath("GridContainer/Panel24"), NodePath("GridContainer/Panel31"), NodePath("GridContainer/Panel32"), NodePath("GridContainer/Panel33"), NodePath("GridContainer/Panel34"), NodePath("GridContainer/Panel41"), NodePath("GridContainer/Panel42"), NodePath("GridContainer/Panel43"), NodePath("GridContainer/Panel44")]
 
 [node name="GridContainer" type="GridContainer" parent="."]
 offset_left = 2.0
@@ -66,3 +67,4 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="PlayerBox" parent="." instance=ExtResource("2_m5pdo")]
+clip_contents = true

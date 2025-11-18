@@ -22,6 +22,18 @@ theme_override_font_sizes/font_size = 40
 text = "Score : 0"
 metadata/_edit_lock_ = true
 
+[node name="Time" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_top = 56.0
+offset_right = 450.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 40
+text = "Time : 0"
+metadata/_edit_lock_ = true
+
 [node name="GamePlate" parent="." instance=ExtResource("2_jfaht")]
 position = Vector2(673, 169)
 metadata/_edit_lock_ = true
+
+[connection signal="request_generate_note" from="." to="GamePlate" method="_on_game_request_generate_note"]
+[connection signal="request_move_player" from="." to="GamePlate" method="_on_game_request_move_player"]

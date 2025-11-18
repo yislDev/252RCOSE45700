@@ -18,38 +18,41 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if (Input.is_action_just_pressed("key_down")):
-		move_down(4)
-	if (Input.is_action_just_pressed("key_up")):
-		move_up(4)
-	if (Input.is_action_just_pressed("key_right")):
-		move_right(4)
-	if (Input.is_action_just_pressed("key_left")):
+	pass
+	
+func move(dir: GameUI.DIR) -> void:
+	if (dir == GameUI.DIR.LEFT):
 		move_left(4)
+	elif (dir == GameUI.DIR.RIGHT):
+		move_right(4)
+	elif (dir == GameUI.DIR.UP):
+		move_up(4)
+	elif (dir == GameUI.DIR.DOWN):
+		move_down(4)
 	pass
 
-func move_left(num_columns: int) -> void:
+func move_left(num_columns: int = 4) -> void:
 	location.y -= 1
 	if (location.y <= -1):
 		location.y = num_columns-1
 	update_position()
 	pass
 
-func move_right(num_columns: int) -> void:
+func move_right(num_columns: int = 4) -> void:
 	location.y += 1
 	if (location.y >= num_columns):
 		location.y = 0
 	update_position()
 	pass
 	
-func move_up(num_rows: int) -> void:
+func move_up(num_rows: int = 4) -> void:
 	location.x -= 1
 	if (location.x <= -1):
 		location.x = num_rows-1
 	update_position()
 	pass
 	
-func move_down(num_rows: int) -> void:
+func move_down(num_rows: int = 4) -> void:
 	location.x += 1
 	if (location.x >= num_rows):
 		location.x = 0

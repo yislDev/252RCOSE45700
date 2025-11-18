@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://hga38v6cjmrl"]
+
+[node name="NoteGenerator" type="Node2D"]

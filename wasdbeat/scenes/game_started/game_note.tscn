@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbw8o4bsey0n4"]
+
+[ext_resource type="Texture2D" uid="uid://b3a56nhfotyq7" path="res://resources/game/blue_line.svg" id="1_spj5t"]
+[ext_resource type="Script" path="res://scenes/game_started/game_note.gd" id="2_afhvo"]
+
+[node name="GameNote" type="Sprite2D"]
+texture = ExtResource("1_spj5t")
+centered = false
+script = ExtResource("2_afhvo")

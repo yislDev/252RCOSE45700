@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dem31wvixbga8"]
+[gd_scene load_steps=3 format=3 uid="uid://dem31wvixbga8"]
 
 [ext_resource type="Script" path="res://scenes/game_started/game_ui.gd" id="1_0j3p2"]
+[ext_resource type="PackedScene" uid="uid://by0ukah14iqjd" path="res://scenes/game_started/game.tscn" id="2_31d7w"]
 
 [node name="GameUi" type="Node2D"]
 script = ExtResource("1_0j3p2")
+
+[node name="Game" parent="." instance=ExtResource("2_31d7w")]
+
+[connection signal="request_move_player" from="." to="Game" method="_on_game_ui_request_move_player"]

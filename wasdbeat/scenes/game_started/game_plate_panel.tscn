@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b0l6ys1phfv5e" path="res://resources/game/panel.svg" id="2_t6vh2"]
 
 [node name="GamePlatePanel" type="Control"]
+clip_contents = true
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 3
 anchors_preset = 0
