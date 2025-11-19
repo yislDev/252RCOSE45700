@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cgy1oyspfhlbu"
+path="res://.godot/imported/Body Talk.mp3-ddd087bed522acce50adb4978037be5f.mp3str"
+
+[deps]
+
+source_file="res://resources/music/M2U/Cytus II-Paff (Original Soundtrack)/Body Talk.mp3"
+dest_files=["res://.godot/imported/Body Talk.mp3-ddd087bed522acce50adb4978037be5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

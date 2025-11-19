@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://tpkm3aj165lm"]
+
+[ext_resource type="Script" path="res://scenes/music/Audio/audio_manager.gd" id="1_etdhr"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_etdhr")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]

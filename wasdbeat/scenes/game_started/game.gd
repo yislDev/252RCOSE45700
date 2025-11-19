@@ -4,6 +4,7 @@ class_name Game
 #노트 출현 시간
 const TIME_NOTE_READY: float = 1.000
 const TIME_NOTE_TOO_LATE: float = 0.150
+const TIME_PLAYER_READY: float = 5.000
 
 #판정 시스템
 const TIME_PERFECT: float = 0.050
@@ -35,9 +36,18 @@ var note_current: Array[Array] = []
 var player_location: Vector2 = Vector2(0,0)
 var player_index: int = 0
 
+var music_bpm: float = 0.0
+var music_music: AudioStream
+var music_artists: String = ""
+var music_note_list: Array[NoteInfo] = []
+var music_end_of_song: float = 1000.0
+var music_offset: float = 0.000
+
+var second_per_beat: float = 1.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	time_game_playing = 0.0
+	time_game_playing = -TIME_PLAYER_READY
 	player_location = Vector2(0,0)
 	player_index = 0
 	
@@ -51,14 +61,39 @@ func _ready() -> void:
 		note_current.push_back(new_empty_note_line_cur)
 	#
 	
+	music_ready()
+	
+	pass
+	
+var target_scene_path: String = "res://scenes/music/music_scene/body_talk.tscn"
+func music_ready() -> void:
+	
+	var target_scene: MusicData = load(target_scene_path).instantiate() as MusicData
+	music_bpm = target_scene.bpm
+	music_music = target_scene.music
+	music_artists = target_scene.artists
+	music_note_list = target_scene.note_list
+	music_end_of_song = target_scene.end_of_song
+	music_offset = target_scene.offset
+	
+	second_per_beat = bpm_to_spb(music_bpm)
+	
+	for i in music_note_list:
+		note_queue[i.panel].append(i.time * second_per_beat + music_offset)
+		print(i.panel, i.time)
+	
+	var audio_manager: AudioManager = load("res://scenes/music/Audio/audio_manager.tscn").instantiate() as AudioManager
+	add_child(audio_manager)
+	print(music_music)
+	get_tree().create_timer(5.0).connect("timeout", Callable(audio_manager, "play_bgm").bind(music_music))
+	#audio_manager.play_bgm(music_music)
+	
 	#테스트 노트들
-	note_queue[1].append(3.5)
-	note_queue[2].append(4.0)
-	note_queue[3].append(4.5)
-	note_queue[2].append(5.0)
+	#note_queue[1].append(3.5)
+	#note_queue[2].append(4.0)
+	#note_queue[3].append(4.5)
+	#note_queue[2].append(5.0)
 	#
-	
-	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -156,3 +191,8 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 	###플레이어 움직이기###
 	request_move_player.emit(player_location)
 	pass # Replace with function body.
+
+
+#BPM을 Beat당 Second(SPB)로
+func bpm_to_spb(bpm: float) -> float:
+	return 60 / bpm
