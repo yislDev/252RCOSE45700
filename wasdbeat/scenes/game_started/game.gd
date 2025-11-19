@@ -67,6 +67,7 @@ func _process(delta: float) -> void:
 	$ColorRect/Score.text = ("Score : %f" % score)
 	$ColorRect/Time.text = ("Time : %f" % time_game_playing)
 	
+	#큐에서 노트 읽어와서 대기시키기
 	for i in range(16):
 		if (note_queue[i].is_empty()):
 			pass
@@ -74,6 +75,14 @@ func _process(delta: float) -> void:
 			note_current[i].push_back(note_queue[i].pop_front())
 			request_generate_note.emit(i)
 		pass
+	
+	#늦은 노트 처리하기
+	for i in range(16):
+		if (not note_current[i].is_empty()):
+			while((not note_current[i].is_empty()) \
+			and (time_game_playing - note_current[i][0] >= TIME_NOTE_TOO_LATE)):
+				note_current[i].pop_front()
+				
 	pass
 
 #입력 받았을 때
@@ -106,11 +115,13 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 	###노트 처리###
 	player_index = player_location.x * 4 + player_location.y
 	
+	'''
 	#기한 지난 노트 삭제
 	print(note_current[player_index])
 	while ((not note_current[player_index].is_empty()) \
 			and (time_at_input - note_current[player_index][0] >= TIME_NOTE_TOO_LATE)):
 		note_current[player_index].pop_front()
+	'''
 	
 	#기한이 지나지 않은 노트 처리
 	var cur_note_timing: float

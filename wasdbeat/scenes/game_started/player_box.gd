@@ -24,7 +24,8 @@ func move(player_location) -> void:
 	location = player_location
 	update_position()
 	pass
-
+	
+'''
 func move_left(num_columns: int = 4) -> void:
 	location.y -= 1
 	if (location.y <= -1):
@@ -52,6 +53,8 @@ func move_down(num_rows: int = 4) -> void:
 		location.x = 0
 	update_position()
 	pass
+'''
+
 
 func update_position() -> void:
 	position = position_offset + Vector2(location.y * (PANEL_SIZE + PANEL_OFFSET), location.x * (PANEL_SIZE + PANEL_OFFSET))
