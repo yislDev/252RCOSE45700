@@ -16,19 +16,33 @@ metadata/_edit_lock_ = true
 
 [node name="Score" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_right = 450.0
+offset_right = 200.0
 offset_bottom = 56.0
 theme_override_font_sizes/font_size = 40
-text = "Score : 0"
+text = "0"
 metadata/_edit_lock_ = true
 
 [node name="Time" type="Label" parent="ColorRect"]
+visible = false
+layout_mode = 0
+offset_top = 300.0
+offset_right = 450.0
+offset_bottom = 356.0
+theme_override_font_sizes/font_size = 40
+text = "Time : 0"
+metadata/_edit_lock_ = true
+
+[node name="NoteScores" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_top = 56.0
 offset_right = 450.0
-offset_bottom = 112.0
+offset_bottom = 343.0
 theme_override_font_sizes/font_size = 40
-text = "Time : 0"
+text = "Perfect	: 0
+Great		: 0
+Good		: 0
+Bad			: 0
+Miss		: 0"
 metadata/_edit_lock_ = true
 
 [node name="GamePlate" parent="." instance=ExtResource("2_jfaht")]

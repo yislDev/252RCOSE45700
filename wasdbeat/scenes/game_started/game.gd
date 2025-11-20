@@ -4,20 +4,20 @@ class_name Game
 #노트 출현 시간
 const TIME_NOTE_READY: float = 1.000
 const TIME_NOTE_TOO_LATE: float = 0.150
-const TIME_PLAYER_READY: float = 5.000
+const TIME_PLAYER_READY: float = 3.000
 
 #판정 시스템
 const TIME_PERFECT: float = 0.050
 const TIME_GREAT: float = 0.080
 const TIME_GOOD: float = 0.110
-const TIME_BAD: float = 0.150
+const TIME_BAD: float = 0.140
 
 enum NOTE_SCORE {
 	PERFECT,
 	GREAT,
 	GOOD,
 	BAD,
-	FAIL
+	MISS
 }
 
 #패널 설정
@@ -29,6 +29,10 @@ signal request_move_player(player_location: Vector2)
 signal request_remove_note(panel_index)
 
 var score: float = 0.0
+var note_count: int = 0
+var score_of_perfect: float = 0.0
+var score_count: Array[int] = [0,0,0,0,0]
+
 var time_game_playing: float = 0.0
 var note_queue: Array[Array] = []
 var note_current: Array[Array] = []
@@ -65,8 +69,10 @@ func _ready() -> void:
 	
 	pass
 	
-var target_scene_path: String = "res://scenes/music/music_scene/body_talk.tscn"
+var target_scene_path: String #= "res://scenes/music/music_scene/body_talk.tscn"
 func music_ready() -> void:
+	
+	target_scene_path = StageLoad.path
 	
 	var target_scene: MusicData = load(target_scene_path).instantiate() as MusicData
 	music_bpm = target_scene.bpm
@@ -78,14 +84,17 @@ func music_ready() -> void:
 	
 	second_per_beat = bpm_to_spb(music_bpm)
 	
+	note_count = music_note_list.size()
+	score_of_perfect = 1000000 / note_count
+	
 	for i in music_note_list:
 		note_queue[i.panel].append(i.time * second_per_beat + music_offset)
-		print(i.panel, i.time)
+		#print(i.panel, i.time)
 	
 	var audio_manager: AudioManager = load("res://scenes/music/Audio/audio_manager.tscn").instantiate() as AudioManager
 	add_child(audio_manager)
 	print(music_music)
-	get_tree().create_timer(5.0).connect("timeout", Callable(audio_manager, "play_bgm").bind(music_music))
+	get_tree().create_timer(TIME_PLAYER_READY).connect("timeout", Callable(audio_manager, "play_bgm").bind(music_music))
 	#audio_manager.play_bgm(music_music)
 	
 	#테스트 노트들
@@ -99,8 +108,16 @@ func music_ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	time_game_playing += delta
-	$ColorRect/Score.text = ("Score : %f" % score)
+	$ColorRect/Score.text = ("%d" % score)
 	$ColorRect/Time.text = ("Time : %f" % time_game_playing)
+	$ColorRect/NoteScores.text = ("	Perfect\t: %d
+									Great\t\t: %d
+									Good\t\t: %d
+									Bad\t\t\t: %d
+									Miss\t\t: %d" % score_count)
+	
+	if (time_game_playing >= music_end_of_song):
+		stage_end()
 	
 	#큐에서 노트 읽어와서 대기시키기
 	for i in range(16):
@@ -117,6 +134,7 @@ func _process(delta: float) -> void:
 			while((not note_current[i].is_empty()) \
 			and (time_game_playing - note_current[i][0] >= TIME_NOTE_TOO_LATE)):
 				note_current[i].pop_front()
+				score_count[4] += 1
 				
 	pass
 
@@ -162,6 +180,7 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 	var cur_note_timing: float
 	var note_score: NOTE_SCORE
 	print(note_current[player_index])
+	
 	if (not note_current[player_index].is_empty()):
 		cur_note_timing = time_at_input - note_current[player_index].pop_front()
 		print(cur_note_timing)
@@ -174,18 +193,21 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 		elif (abs(cur_note_timing) <= TIME_BAD):
 			note_score = NOTE_SCORE.BAD
 		else:
-			note_score = NOTE_SCORE.FAIL
+			note_score = NOTE_SCORE.MISS
 				
 		match note_score:
 			NOTE_SCORE.PERFECT:
-				score += 1000
+				score += score_of_perfect
+				score_count[0] += 1
 			NOTE_SCORE.GREAT:
-				score += 100
+				score += score_of_perfect * 0.9
+				score_count[1] += 1
 			NOTE_SCORE.GOOD:
-				score+= 10
+				score += score_of_perfect * 0.75
+				score_count[2] += 1
 			NOTE_SCORE.BAD:
-				score+= 1
-				
+				score += score_of_perfect * 0.5
+				score_count[3] += 1
 		request_remove_note.emit(player_index)
 				
 	###플레이어 움직이기###
@@ -196,3 +218,10 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 #BPM을 Beat당 Second(SPB)로
 func bpm_to_spb(bpm: float) -> float:
 	return 60 / bpm
+
+#스테이지 끝
+func stage_end() -> void:
+	StageLoad.score = score
+	StageLoad.score_count = score_count
+	get_tree().change_scene_to_file("res://scenes/stage_end/stage_end.tscn")
+	pass

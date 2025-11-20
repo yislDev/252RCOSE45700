@@ -9,9 +9,6 @@ class_name MusicData
 @export var end_of_song: float
 @export var offset: float
 
-#바뀌는 요소
-@export var best_score: float = 0
-
 '''
 func _init(bpm: float, path: String, artists: String, note_list: Array[NoteInfo], end_of_song: float) -> void:
 	_bpm = bpm
