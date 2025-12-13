@@ -92,6 +92,7 @@ func music_ready() -> void:
 		#print(i.panel, i.time)
 	
 	var audio_manager: AudioManager = load("res://scenes/music/Audio/audio_manager.tscn").instantiate() as AudioManager
+	audio_manager.set_bus("BGM")
 	add_child(audio_manager)
 	print(music_music)
 	get_tree().create_timer(TIME_PLAYER_READY).connect("timeout", Callable(audio_manager, "play_bgm").bind(music_music))

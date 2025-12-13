@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bieau1g8i2n8y"]
+
+[ext_resource type="Texture2D" uid="uid://bs0p45wetisxw" path="res://resources/lobby/option.png" id="1_emfju"]
+
+[node name="LobbyOption" type="Button"]
+scale = Vector2(0.1, 0.1)
+icon = ExtResource("1_emfju")

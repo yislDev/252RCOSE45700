@@ -15,3 +15,6 @@ func stop_bgm(fade_out_duration: float = 0.0) -> void:
 		await create_tween().tween_property($BGMPlayer, "volume_db", -80, fade_out_duration).finished
 	
 	$BGMPlayer.stop()
+
+func set_bus(bus: String) -> void:
+	$BGMPlayer.bus = bus
