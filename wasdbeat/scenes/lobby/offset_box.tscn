@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhf5stxj08062"]
+
+[ext_resource type="Texture2D" uid="uid://cqlvrts2rvlmc" path="res://resources/lobby/option_left_triangle.svg" id="1_e06qk"]
+[ext_resource type="Script" path="res://scenes/lobby/offset_box.gd" id="1_gpxa0"]
+[ext_resource type="Texture2D" uid="uid://b0aqcjo4wbliu" path="res://resources/lobby/option_right_triangle.svg" id="2_e55vk"]
+[ext_resource type="Script" path="res://scenes/lobby/offset_text.gd" id="2_kvf7n"]
+
+[node name="OffsetBox" type="Node2D"]
+script = ExtResource("1_gpxa0")
+
+[node name="OffsetText" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 55.0
+offset_right = 154.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0.00
+"
+horizontal_alignment = 1
+script = ExtResource("2_kvf7n")
+
+[node name="ButtonLeft" type="TextureButton" parent="OffsetText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -105.0
+offset_top = -20.0
+offset_right = -65.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("1_e06qk")
+texture_pressed = ExtResource("1_e06qk")
+texture_hover = ExtResource("1_e06qk")
+
+[node name="ButtonRight" type="TextureButton" parent="OffsetText"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 65.0
+offset_top = -20.0
+offset_right = 105.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_e55vk")
+texture_pressed = ExtResource("2_e55vk")
+texture_hover = ExtResource("2_e55vk")
+
+[connection signal="change_offset" from="." to="OffsetText" method="change_text"]
+[connection signal="pressed" from="OffsetText/ButtonLeft" to="." method="_on_button_left_pressed"]
+[connection signal="pressed" from="OffsetText/ButtonRight" to="." method="_on_button_right_pressed"]

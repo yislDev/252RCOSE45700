@@ -1,30 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://brlbo03d1bvjq"]
+[gd_scene load_steps=6 format=3 uid="uid://brlbo03d1bvjq"]
 
 [ext_resource type="Script" path="res://scenes/lobby/lobby_ui.gd" id="1_vb6pg"]
 [ext_resource type="PackedScene" uid="uid://b0j1xx5plk4ie" path="res://scenes/lobby/lobby_main.tscn" id="2_g7r4d"]
 [ext_resource type="PackedScene" uid="uid://de7c4ypug3da4" path="res://scenes/lobby/lobby_select.tscn" id="3_but02"]
 [ext_resource type="PackedScene" uid="uid://bieau1g8i2n8y" path="res://scenes/lobby/lobby_option.tscn" id="4_xx0bv"]
-[ext_resource type="Texture2D" uid="uid://b4e0lfe5jh1hc" path="res://resources/lobby/option_grab.svg" id="5_ngvu7"]
-[ext_resource type="Script" path="res://scenes/lobby/option_slider.gd" id="6_wbq8y"]
-[ext_resource type="Script" path="res://scenes/lobby/volume_size_text.gd" id="7_p6ba6"]
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_jrqdd"]
-color = Color(1, 1, 1, 1)
-grow_begin = 0.0
-grow_end = 0.0
-thickness = 16
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_f1clr"]
-color = Color(1, 1, 1, 1)
-grow_begin = 0.0
-grow_end = 0.0
-thickness = 16
-
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_55y30"]
-color = Color(1, 1, 1, 1)
-grow_begin = 0.0
-grow_end = 0.0
-thickness = 16
+[ext_resource type="PackedScene" uid="uid://cxq38ymx4qe3s" path="res://scenes/lobby/option.tscn" id="5_avuq1"]
 
 [node name="LobbyUi" type="Node2D"]
 script = ExtResource("1_vb6pg")
@@ -40,150 +20,7 @@ metadata/_edit_lock_ = true
 [node name="LobbyOption" parent="." instance=ExtResource("4_xx0bv")]
 scale = Vector2(0.07, 0.07)
 
-[node name="Option" type="ColorRect" parent="."]
-offset_left = 1152.0
-offset_right = 2304.0
-offset_bottom = 648.0
-pivot_offset = Vector2(576, 324)
-color = Color(0.133333, 0.133333, 0.133333, 0.866667)
-metadata/_edit_lock_ = true
-
-[node name="Done" type="Button" parent="Option"]
-layout_mode = 0
-offset_left = 476.0
-offset_top = 548.0
-offset_right = 676.0
-offset_bottom = 598.0
-theme_override_font_sizes/font_size = 30
-text = "Done
-"
-
-[node name="MasterSlider" type="HSlider" parent="Option"]
-layout_mode = 0
-offset_left = 456.0
-offset_top = 172.0
-offset_right = 1052.0
-offset_bottom = 268.0
-scale = Vector2(1, 0.75)
-theme_override_icons/grabber = ExtResource("5_ngvu7")
-theme_override_icons/grabber_highlight = ExtResource("5_ngvu7")
-theme_override_icons/grabber_disabled = ExtResource("5_ngvu7")
-theme_override_styles/slider = SubResource("StyleBoxLine_jrqdd")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_f1clr")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_55y30")
-max_value = 1.0
-step = 0.01
-value = 1.0
-script = ExtResource("6_wbq8y")
-bus_name = "Master"
-metadata/_edit_lock_ = true
-
-[node name="MasterText" type="Label" parent="Option"]
-layout_mode = 0
-offset_left = 70.0
-offset_top = 163.0
-offset_right = 254.0
-offset_bottom = 233.0
-theme_override_font_sizes/font_size = 50
-text = "Master"
-metadata/_edit_lock_ = true
-
-[node name="MasterSizeText" type="Label" parent="Option"]
-layout_mode = 0
-offset_left = 294.0
-offset_top = 163.0
-offset_right = 478.0
-offset_bottom = 233.0
-theme_override_font_sizes/font_size = 50
-text = "100"
-script = ExtResource("7_p6ba6")
-metadata/_edit_lock_ = true
-
-[node name="MusicSlider" type="HSlider" parent="Option"]
-offset_left = 456.0
-offset_top = 272.0
-offset_right = 1052.0
-offset_bottom = 368.0
-scale = Vector2(1, 0.75)
-theme_override_icons/grabber = ExtResource("5_ngvu7")
-theme_override_icons/grabber_highlight = ExtResource("5_ngvu7")
-theme_override_icons/grabber_disabled = ExtResource("5_ngvu7")
-theme_override_styles/slider = SubResource("StyleBoxLine_jrqdd")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_f1clr")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_55y30")
-max_value = 1.0
-step = 0.01
-value = 1.0
-script = ExtResource("6_wbq8y")
-bus_name = "BGM"
-metadata/_edit_lock_ = true
-
-[node name="MusicText" type="Label" parent="Option"]
-offset_left = 70.0
-offset_top = 263.0
-offset_right = 254.0
-offset_bottom = 333.0
-theme_override_font_sizes/font_size = 50
-text = "Music"
-metadata/_edit_lock_ = true
-
-[node name="MusicSizeText" type="Label" parent="Option"]
-offset_left = 294.0
-offset_top = 263.0
-offset_right = 478.0
-offset_bottom = 333.0
-theme_override_font_sizes/font_size = 50
-text = "100"
-script = ExtResource("7_p6ba6")
-metadata/_edit_lock_ = true
-
-[node name="SoundEffectSlider" type="HSlider" parent="Option"]
-offset_left = 456.0
-offset_top = 372.0
-offset_right = 1052.0
-offset_bottom = 468.0
-scale = Vector2(1, 0.75)
-theme_override_icons/grabber = ExtResource("5_ngvu7")
-theme_override_icons/grabber_highlight = ExtResource("5_ngvu7")
-theme_override_icons/grabber_disabled = ExtResource("5_ngvu7")
-theme_override_styles/slider = SubResource("StyleBoxLine_jrqdd")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_f1clr")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_55y30")
-max_value = 1.0
-step = 0.01
-value = 1.0
-script = ExtResource("6_wbq8y")
-bus_name = "SFX"
-metadata/_edit_lock_ = true
-
-[node name="SoundEffectText" type="Label" parent="Option"]
-offset_left = 70.0
-offset_top = 363.0
-offset_right = 254.0
-offset_bottom = 433.0
-theme_override_font_sizes/font_size = 50
-text = "Effect
-"
-metadata/_edit_lock_ = true
-
-[node name="SoundEffectSizeText" type="Label" parent="Option"]
-offset_left = 294.0
-offset_top = 363.0
-offset_right = 478.0
-offset_bottom = 433.0
-theme_override_font_sizes/font_size = 50
-text = "100"
-script = ExtResource("7_p6ba6")
-metadata/_edit_lock_ = true
-
-[node name="Option" type="Label" parent="Option"]
-layout_mode = 0
-offset_left = 476.0
-offset_top = 50.0
-offset_right = 676.0
-offset_bottom = 133.0
-theme_override_font_sizes/font_size = 60
-text = "Option"
+[node name="Option" parent="." instance=ExtResource("5_avuq1")]
 
 [connection signal="request_escape_game" from="." to="LobbyMain" method="_on_lobby_ui_request_escape_game"]
 [connection signal="request_move_to_lobby_main_escape" from="." to="LobbyMain" method="_on_lobby_ui_request_move_to_lobby_main_escape"]
@@ -193,7 +30,4 @@ text = "Option"
 [connection signal="request_move_to_lobby_select_to_lobby_select" from="LobbyMain" to="LobbySelect" method="_on_lobby_main_request_move_to_lobby_select_to_lobby_select"]
 [connection signal="request_not_to_escape_to_lobby_ui" from="LobbyMain" to="." method="_on_lobby_main_request_not_to_escape_to_lobby_ui"]
 [connection signal="pressed" from="LobbyOption" to="." method="_on_lobby_option_pressed"]
-[connection signal="pressed" from="Option/Done" to="." method="_on_option_done_pressed"]
-[connection signal="set_text" from="Option/MasterSlider" to="Option/MasterSizeText" method="_on_volume_slider_set_text"]
-[connection signal="set_text" from="Option/MusicSlider" to="Option/MusicSizeText" method="_on_volume_slider_set_text"]
-[connection signal="set_text" from="Option/SoundEffectSlider" to="Option/SoundEffectSizeText" method="_on_volume_slider_set_text"]
+[connection signal="option_done" from="Option" to="." method="_on_option_done_pressed"]

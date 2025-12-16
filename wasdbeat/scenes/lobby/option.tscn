@@ -1,0 +1,214 @@
+[gd_scene load_steps=9 format=3 uid="uid://cxq38ymx4qe3s"]
+
+[ext_resource type="Script" path="res://scenes/lobby/option.gd" id="1_u1lyg"]
+[ext_resource type="Texture2D" uid="uid://b4e0lfe5jh1hc" path="res://resources/lobby/option_grab.svg" id="2_mml08"]
+[ext_resource type="Script" path="res://scenes/lobby/option_slider.gd" id="3_5coqr"]
+[ext_resource type="Script" path="res://scenes/lobby/volume_size_text.gd" id="4_x0pbg"]
+[ext_resource type="PackedScene" uid="uid://bhf5stxj08062" path="res://scenes/lobby/offset_box.tscn" id="5_rghqd"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_jrqdd"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_f1clr"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 16
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_55y30"]
+color = Color(1, 1, 1, 1)
+grow_begin = 0.0
+grow_end = 0.0
+thickness = 16
+
+[node name="Option" type="ColorRect"]
+offset_left = 1152.0
+offset_right = 2304.0
+offset_bottom = 648.0
+pivot_offset = Vector2(576, 324)
+color = Color(0.133333, 0.133333, 0.133333, 0.866667)
+script = ExtResource("1_u1lyg")
+metadata/_edit_lock_ = true
+
+[node name="OptionText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 50.0
+offset_right = 676.0
+offset_bottom = 133.0
+theme_override_font_sizes/font_size = 60
+text = "Option"
+
+[node name="Done" type="Button" parent="."]
+layout_mode = 0
+offset_left = 476.0
+offset_top = 548.0
+offset_right = 676.0
+offset_bottom = 598.0
+theme_override_font_sizes/font_size = 30
+text = "Done
+"
+
+[node name="MasterSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 172.0
+offset_right = 1052.0
+offset_bottom = 268.0
+scale = Vector2(1, 0.75)
+theme_override_icons/grabber = ExtResource("2_mml08")
+theme_override_icons/grabber_highlight = ExtResource("2_mml08")
+theme_override_icons/grabber_disabled = ExtResource("2_mml08")
+theme_override_styles/slider = SubResource("StyleBoxLine_jrqdd")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_f1clr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_55y30")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_5coqr")
+bus_name = "Master"
+metadata/_edit_lock_ = true
+
+[node name="MasterText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 163.0
+offset_right = 254.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 50
+text = "Master"
+metadata/_edit_lock_ = true
+
+[node name="MasterSizeText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 163.0
+offset_right = 478.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+script = ExtResource("4_x0pbg")
+metadata/_edit_lock_ = true
+
+[node name="MusicSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 272.0
+offset_right = 1052.0
+offset_bottom = 368.0
+scale = Vector2(1, 0.75)
+theme_override_icons/grabber = ExtResource("2_mml08")
+theme_override_icons/grabber_highlight = ExtResource("2_mml08")
+theme_override_icons/grabber_disabled = ExtResource("2_mml08")
+theme_override_styles/slider = SubResource("StyleBoxLine_jrqdd")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_f1clr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_55y30")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_5coqr")
+bus_name = "BGM"
+metadata/_edit_lock_ = true
+
+[node name="MusicText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 263.0
+offset_right = 254.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 50
+text = "Music"
+metadata/_edit_lock_ = true
+
+[node name="MusicSizeText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 263.0
+offset_right = 478.0
+offset_bottom = 333.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+script = ExtResource("4_x0pbg")
+metadata/_edit_lock_ = true
+
+[node name="SoundEffectSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 372.0
+offset_right = 1052.0
+offset_bottom = 468.0
+scale = Vector2(1, 0.75)
+theme_override_icons/grabber = ExtResource("2_mml08")
+theme_override_icons/grabber_highlight = ExtResource("2_mml08")
+theme_override_icons/grabber_disabled = ExtResource("2_mml08")
+theme_override_styles/slider = SubResource("StyleBoxLine_jrqdd")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_f1clr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_55y30")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("3_5coqr")
+bus_name = "SFX"
+metadata/_edit_lock_ = true
+
+[node name="SoundEffectText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 363.0
+offset_right = 254.0
+offset_bottom = 433.0
+theme_override_font_sizes/font_size = 50
+text = "Effect
+"
+metadata/_edit_lock_ = true
+
+[node name="SoundEffectSizeText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 363.0
+offset_right = 478.0
+offset_bottom = 433.0
+theme_override_font_sizes/font_size = 50
+text = "100"
+script = ExtResource("4_x0pbg")
+metadata/_edit_lock_ = true
+
+[node name="InputOffsetText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 463.0
+offset_right = 361.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 50
+text = "Input Offset
+"
+metadata/_edit_lock_ = true
+
+[node name="InputOffsetBox" parent="." instance=ExtResource("5_rghqd")]
+position = Vector2(381, 473)
+scale = Vector2(0.8, 0.8)
+metadata/_edit_lock_ = true
+
+[node name="MusicOffsetText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 463.0
+offset_right = 878.0
+offset_bottom = 533.0
+theme_override_font_sizes/font_size = 50
+text = "Music Offset
+"
+metadata/_edit_lock_ = true
+
+[node name="MusicOffsetBox" parent="." instance=ExtResource("5_rghqd")]
+position = Vector2(900, 473)
+scale = Vector2(0.8, 0.8)
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="Done" to="." method="_on_done_pressed"]
+[connection signal="set_text" from="MasterSlider" to="MasterSizeText" method="_on_volume_slider_set_text"]
+[connection signal="set_text" from="MusicSlider" to="MusicSizeText" method="_on_volume_slider_set_text"]
+[connection signal="set_text" from="SoundEffectSlider" to="SoundEffectSizeText" method="_on_volume_slider_set_text"]
