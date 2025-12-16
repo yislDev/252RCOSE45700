@@ -11,6 +11,9 @@ func _ready() -> void:
 	$MasterSlider.value = option_data.master_volume
 	$MusicSlider.value = option_data.music_volume
 	$SoundEffectSlider.value = option_data.effect_volume
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"),linear_to_db(float($MasterSlider.value))/100)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("BGM"),linear_to_db(float($MusicSlider.value))/100)
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"),linear_to_db(float($SoundEffectSlider.value))/100)
 	$InputOffsetBox.offset = option_data.input_offset
 	$InputOffsetBox.change_offset_fun()
 	$MusicOffsetBox.offset = option_data.music_offset
