@@ -27,6 +27,7 @@ const PANEL_NUM_ROWS: int = 4
 signal request_generate_note(panel_index: int)
 signal request_move_player(player_location: Vector2)
 signal request_remove_note(panel_index)
+signal request_pause()
 
 var score: float = 0.0
 var note_count: int = 0
@@ -57,6 +58,8 @@ func _ready() -> void:
 	options = Options.new().load_data()
 	option_input_offset = float(options.input_offset) / 100
 	option_note_appearance_offset = float(options.note_offset) / 100
+	print("input offset %f" % option_input_offset)
+	print("note offset %f" % option_note_appearance_offset)
 	
 	time_game_playing = -TIME_PLAYER_READY
 	player_location = Vector2(0,0)
@@ -101,8 +104,8 @@ func music_ready() -> void:
 	var audio_manager: AudioManager = load("res://scenes/music/Audio/audio_manager.tscn").instantiate() as AudioManager
 	audio_manager.set_bus("BGM")
 	add_child(audio_manager)
-	print(music_music)
-	get_tree().create_timer(TIME_PLAYER_READY).connect("timeout", Callable(audio_manager, "play_bgm").bind(music_music))
+	#print(music_music)
+	get_tree().create_timer(TIME_PLAYER_READY, false).connect("timeout", Callable(audio_manager, "play_bgm").bind(music_music))
 	#audio_manager.play_bgm(music_music)
 	
 	#테스트 노트들
@@ -148,7 +151,7 @@ func _process(delta: float) -> void:
 
 #입력 받았을 때
 func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
-	print(note_current)
+	#print(note_current)
 	
 	#시간 저장해두기
 	var time_at_input: float
@@ -187,11 +190,12 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 	#기한이 지나지 않은 노트 처리
 	var cur_note_timing: float
 	var note_score: NOTE_SCORE
-	print(note_current[player_index])
+	#print(note_current[player_index])
 	
+	print(time_at_input / bpm_to_spb(106.667))
 	if (not note_current[player_index].is_empty()):
 		cur_note_timing = time_at_input + option_input_offset - note_current[player_index].pop_front()
-		print(cur_note_timing)
+		#print(cur_note_timing)
 		if (abs(cur_note_timing) <= TIME_PERFECT):
 			note_score = NOTE_SCORE.PERFECT
 		elif (abs(cur_note_timing) <= TIME_GREAT):
@@ -216,6 +220,8 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 			NOTE_SCORE.BAD:
 				score += score_of_perfect * 0.5
 				score_count[3] += 1
+			NOTE_SCORE.MISS:
+				score_count[4] += 1
 		request_remove_note.emit(player_index)
 				
 	###플레이어 움직이기###
@@ -226,6 +232,7 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 #BPM을 Beat당 Second(SPB)로
 func bpm_to_spb(bpm: float) -> float:
 	return 60 / bpm
+	
 
 #스테이지 끝
 func stage_end() -> void:
@@ -239,3 +246,24 @@ func _on_quit_pressed() -> void:
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://scenes/lobby/lobby_ui.tscn")
 	pass # Replace with function body.
+
+
+func _on_game_pause_pressed() -> void:
+	request_pause.emit()
+	pass # Replace with function body.
+
+# 새로운 점수 계산 함수 추가
+func _update_total_score() -> void:
+	if note_count == 0: return
+	
+	# 각 판정별 가중치 (Perfect를 100으로 잡고 정수로 계산)
+	var current_weight: float = (score_count[0] * 100.0) + \
+								(score_count[1] * 90.0) + \
+								(score_count[2] * 75.0) + \
+								(score_count[3] * 50.0)
+	
+	var max_weight: float = note_count * 100.0
+	
+	# 전체 가중치 비율을 1,000,000점에 곱함
+	# 이 방식은 마지막 노트를 Perfect로 쳤을 때 정확히 1,000,000이 나옵니다.
+	score = (current_weight / max_weight) * 1000000.0

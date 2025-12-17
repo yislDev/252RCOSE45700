@@ -30,7 +30,7 @@ func _ready() -> void:
 		score_data.score_dict[StageLoad.music_name] = max(StageLoad.score, score_data.score_dict[StageLoad.music_name])
 	else:
 		score_data.score_dict[StageLoad.music_name] = StageLoad.score
-	print(score_data.score_dict)
+	#print(score_data.score_dict)
 	score_data.save_data()
 
 func _on_next_pressed() -> void:

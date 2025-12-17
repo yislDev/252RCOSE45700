@@ -6,10 +6,10 @@ var stage_list: Dictionary = {
 					"stage_path": "res://scenes/music/music_scene/body_talk.tscn",
 					"icon_path": "res://resources/music/M2U/bodytalk_icon.png",
 					"album_path": "res://resources/music/M2U/bodytalk_album.png"},
-	"Body Talky" :{	"music_name": "Body Talky",
-					"stage_path": "res://scenes/music/music_scene/body_talk.tscn",
-					"icon_path": "res://resources/music/M2U/bodytalk_icon.png",
-					"album_path": "res://resources/music/M2U/bodytalk_album.png"}
+	"Frontier Weakness" :{	"music_name": "Frontier Weakness",
+					"stage_path": "res://scenes/music/music_scene/frontier_weakness.tscn",
+					"icon_path": "res://resources/music/YISL/frontierweakness_icon.png",
+					"album_path": "res://resources/music/YISL/frontierweakness_album.png"}
 	#end of stages
 }
 

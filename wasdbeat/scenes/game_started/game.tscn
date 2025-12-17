@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://by0ukah14iqjd"]
+[gd_scene load_steps=5 format=3 uid="uid://by0ukah14iqjd"]
 
 [ext_resource type="Script" path="res://scenes/game_started/game.gd" id="1_ldgn5"]
 [ext_resource type="PackedScene" uid="uid://c804wsru2i4ch" path="res://scenes/game_started/game_plate.tscn" id="2_jfaht"]
 [ext_resource type="PackedScene" uid="uid://bieau1g8i2n8y" path="res://scenes/lobby/lobby_option.tscn" id="3_vonef"]
+[ext_resource type="Texture2D" uid="uid://d0nlybh07o3m1" path="res://resources/game/game_pause.svg" id="4_rwb1g"]
 
 [node name="Game" type="Node2D"]
+process_mode = 1
 script = ExtResource("1_ldgn5")
 metadata/_edit_lock_ = true
 
@@ -52,10 +54,12 @@ metadata/_edit_lock_ = true
 
 [node name="GamePause" parent="." instance=ExtResource("3_vonef")]
 offset_left = 1080.32
-offset_right = 2112.32
-offset_bottom = 1032.0
-scale = Vector2(0.07, 0.07)
+offset_right = 1128.32
+offset_bottom = 48.0
+scale = Vector2(1.493, 1.493)
+icon = ExtResource("4_rwb1g")
 
 [connection signal="request_generate_note" from="." to="GamePlate" method="_on_game_request_generate_note"]
 [connection signal="request_move_player" from="." to="GamePlate" method="_on_game_request_move_player"]
 [connection signal="request_remove_note" from="." to="GamePlate" method="_on_game_request_remove_note"]
+[connection signal="pressed" from="GamePause" to="." method="_on_game_pause_pressed"]

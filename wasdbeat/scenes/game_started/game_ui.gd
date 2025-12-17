@@ -27,8 +27,7 @@ func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("key_left")):
 		request_move_player.emit(DIR.LEFT)
 	if (Input.is_action_just_pressed("key_escape")):
-		$Pause.show()
-		get_tree().paused = true
+		game_pause()
 	pass
 
 
@@ -36,3 +35,8 @@ func _on_resume_pressed() -> void:
 	$Pause.hide()
 	get_tree().paused = false
 	pass # Replace with function body.
+
+func game_pause() -> void:
+	$Pause.show()
+	get_tree().paused = true
+	pass

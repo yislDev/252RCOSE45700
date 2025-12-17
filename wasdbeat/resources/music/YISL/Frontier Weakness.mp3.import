@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ii3jh8nrgvdb"
+path="res://.godot/imported/Frontier Weakness.mp3-f7c2d578e0ab43a63875c807da62398e.mp3str"
+
+[deps]
+
+source_file="res://resources/music/YISL/Frontier Weakness.mp3"
+dest_files=["res://.godot/imported/Frontier Weakness.mp3-f7c2d578e0ab43a63875c807da62398e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

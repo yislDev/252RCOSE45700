@@ -1,0 +1,157 @@
+[gd_scene load_steps=32 format=3 uid="uid://d03yrcm6drs1w"]
+
+[ext_resource type="Script" path="res://scenes/music/music_scene/music_data.gd" id="1_aqhwu"]
+[ext_resource type="AudioStream" uid="uid://ii3jh8nrgvdb" path="res://resources/music/YISL/Frontier Weakness.mp3" id="2_caoru"]
+[ext_resource type="Script" path="res://scenes/game_started/note_info.gd" id="3_n8i1o"]
+
+[sub_resource type="Resource" id="Resource_1sv2f"]
+script = ExtResource("3_n8i1o")
+time = 4.0
+panel = 1
+
+[sub_resource type="Resource" id="Resource_q48d0"]
+script = ExtResource("3_n8i1o")
+time = 8.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_g0sn7"]
+script = ExtResource("3_n8i1o")
+time = 12.0
+panel = 6
+
+[sub_resource type="Resource" id="Resource_mgkd7"]
+script = ExtResource("3_n8i1o")
+time = 16.0
+panel = 10
+
+[sub_resource type="Resource" id="Resource_x1ldl"]
+script = ExtResource("3_n8i1o")
+time = 20.0
+panel = 14
+
+[sub_resource type="Resource" id="Resource_wool6"]
+script = ExtResource("3_n8i1o")
+time = 24.0
+panel = 15
+
+[sub_resource type="Resource" id="Resource_dxhv1"]
+script = ExtResource("3_n8i1o")
+time = 28.0
+panel = 12
+
+[sub_resource type="Resource" id="Resource_anlni"]
+script = ExtResource("3_n8i1o")
+time = 32.0
+panel = 0
+
+[sub_resource type="Resource" id="Resource_66nx4"]
+script = ExtResource("3_n8i1o")
+time = 36.0
+panel = 1
+
+[sub_resource type="Resource" id="Resource_5wq3v"]
+script = ExtResource("3_n8i1o")
+time = 40.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_0abtd"]
+script = ExtResource("3_n8i1o")
+time = 44.0
+panel = 6
+
+[sub_resource type="Resource" id="Resource_vl54t"]
+script = ExtResource("3_n8i1o")
+time = 48.0
+panel = 5
+
+[sub_resource type="Resource" id="Resource_xeqpg"]
+script = ExtResource("3_n8i1o")
+time = 52.0
+panel = 4
+
+[sub_resource type="Resource" id="Resource_3j3sw"]
+script = ExtResource("3_n8i1o")
+time = 56.0
+panel = 7
+
+[sub_resource type="Resource" id="Resource_imgwm"]
+script = ExtResource("3_n8i1o")
+time = 60.0
+panel = 6
+
+[sub_resource type="Resource" id="Resource_158tc"]
+script = ExtResource("3_n8i1o")
+time = 64.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_qeec3"]
+script = ExtResource("3_n8i1o")
+time = 66.5
+panel = 6
+
+[sub_resource type="Resource" id="Resource_kum2l"]
+script = ExtResource("3_n8i1o")
+time = 66.75
+panel = 10
+
+[sub_resource type="Resource" id="Resource_b4ng1"]
+script = ExtResource("3_n8i1o")
+time = 67.25
+panel = 11
+
+[sub_resource type="Resource" id="Resource_7ulcj"]
+script = ExtResource("3_n8i1o")
+time = 67.5
+panel = 8
+
+[sub_resource type="Resource" id="Resource_osaw4"]
+script = ExtResource("3_n8i1o")
+time = 67.75
+panel = 9
+
+[sub_resource type="Resource" id="Resource_hs8vl"]
+script = ExtResource("3_n8i1o")
+time = 68.0
+panel = 10
+
+[sub_resource type="Resource" id="Resource_fc7n2"]
+script = ExtResource("3_n8i1o")
+time = 68.5
+panel = 14
+
+[sub_resource type="Resource" id="Resource_sh3r1"]
+script = ExtResource("3_n8i1o")
+time = 68.75
+panel = 2
+
+[sub_resource type="Resource" id="Resource_twfkr"]
+script = ExtResource("3_n8i1o")
+time = 69.25
+panel = 3
+
+[sub_resource type="Resource" id="Resource_rdtol"]
+script = ExtResource("3_n8i1o")
+time = 69.5
+panel = 0
+
+[sub_resource type="Resource" id="Resource_ptkc3"]
+script = ExtResource("3_n8i1o")
+time = 69.75
+panel = 1
+
+[sub_resource type="Resource" id="Resource_7iysk"]
+script = ExtResource("3_n8i1o")
+time = 70.0
+panel = 2
+
+[node name="FrontierWeakness" type="Control"]
+process_mode = 1
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_aqhwu")
+bpm = 106.667
+music = ExtResource("2_caoru")
+artists = "YISL"
+note_list = Array[ExtResource("3_n8i1o")]([SubResource("Resource_1sv2f"), SubResource("Resource_q48d0"), SubResource("Resource_g0sn7"), SubResource("Resource_mgkd7"), SubResource("Resource_x1ldl"), SubResource("Resource_wool6"), SubResource("Resource_dxhv1"), SubResource("Resource_anlni"), SubResource("Resource_66nx4"), SubResource("Resource_5wq3v"), SubResource("Resource_0abtd"), SubResource("Resource_vl54t"), SubResource("Resource_xeqpg"), SubResource("Resource_3j3sw"), SubResource("Resource_imgwm"), SubResource("Resource_158tc"), SubResource("Resource_qeec3"), SubResource("Resource_kum2l"), SubResource("Resource_b4ng1"), SubResource("Resource_7ulcj"), SubResource("Resource_osaw4"), SubResource("Resource_hs8vl"), SubResource("Resource_fc7n2"), SubResource("Resource_sh3r1"), SubResource("Resource_twfkr"), SubResource("Resource_rdtol"), SubResource("Resource_ptkc3"), SubResource("Resource_7iysk")])
+end_of_song = 120.0
+offset = 0.025

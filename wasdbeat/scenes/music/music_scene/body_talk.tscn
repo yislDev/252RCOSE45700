@@ -395,6 +395,7 @@ time = 127.0
 panel = 7
 
 [node name="BodyTalk" type="Control"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_m2ptp")
