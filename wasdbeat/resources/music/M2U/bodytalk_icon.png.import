@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4j65oiawc1wu"
-path="res://.godot/imported/artworks-XQlk1klbagsZ74zz-nyIdaQ-t500x500.png-c168d222841467d88d2b73be46cfd336.ctex"
+uid="uid://qjhgqvi6bi7w"
+path="res://.godot/imported/bodytalk_icon.png-65648e1455936932de21aa7ff70d0eec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/music/M2U/artworks-XQlk1klbagsZ74zz-nyIdaQ-t500x500.png"
-dest_files=["res://.godot/imported/artworks-XQlk1klbagsZ74zz-nyIdaQ-t500x500.png-c168d222841467d88d2b73be46cfd336.ctex"]
+source_file="res://resources/music/M2U/bodytalk_icon.png"
+dest_files=["res://.godot/imported/bodytalk_icon.png-65648e1455936932de21aa7ff70d0eec.ctex"]
 
 [params]
 

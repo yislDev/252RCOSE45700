@@ -12,6 +12,7 @@ enum DIR {
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Pause.hide()
 	pass # Replace with function body.
 
 
@@ -25,4 +26,13 @@ func _process(delta: float) -> void:
 		request_move_player.emit(DIR.RIGHT)
 	if (Input.is_action_just_pressed("key_left")):
 		request_move_player.emit(DIR.LEFT)
+	if (Input.is_action_just_pressed("key_escape")):
+		$Pause.show()
+		get_tree().paused = true
 	pass
+
+
+func _on_resume_pressed() -> void:
+	$Pause.hide()
+	get_tree().paused = false
+	pass # Replace with function body.

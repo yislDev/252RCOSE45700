@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://73lmda2hvxdg"]
 
 [ext_resource type="Script" path="res://scenes/lobby/stage_button.gd" id="1_13n7v"]
-[ext_resource type="Texture2D" uid="uid://d4j65oiawc1wu" path="res://resources/music/M2U/artworks-XQlk1klbagsZ74zz-nyIdaQ-t500x500.png" id="2_vayi7"]
+[ext_resource type="Texture2D" path="res://resources/music/M2U/artworks-XQlk1klbagsZ74zz-nyIdaQ-t500x500.png" id="2_vayi7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5on45"]
 
@@ -25,17 +25,21 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_833j2"]
 
-[node name="StageButton" type="Node2D"]
+[node name="StageButton" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_13n7v")
 
 [node name="StageButtonBackground" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 584.0
-offset_bottom = 136.0
+offset_bottom = 100.0
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
 [node name="StageStart" type="Button" parent="."]
+layout_mode = 0
 offset_right = 584.0
-offset_bottom = 136.0
+offset_bottom = 100.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_5on45")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_o3wu2")
 theme_override_styles/disabled = SubResource("StyleBoxEmpty_v75e8")
@@ -49,16 +53,18 @@ theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_upptf")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_833j2")
 
 [node name="StageName" type="Label" parent="."]
-offset_left = 136.0
+layout_mode = 0
+offset_left = 100.0
 offset_right = 584.0
-offset_bottom = 136.0
+offset_bottom = 100.0
 theme_override_font_sizes/font_size = 30
 text = "Body Talk"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StageImage" type="Sprite2D" parent="."]
-position = Vector2(68, 68)
+position = Vector2(50, 50)
 texture = ExtResource("2_vayi7")
 
+[connection signal="mouse_entered" from="StageStart" to="." method="_on_stage_start_mouse_entered"]
 [connection signal="pressed" from="StageStart" to="." method="button_pressed"]

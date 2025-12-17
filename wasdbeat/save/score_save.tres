@@ -4,4 +4,6 @@
 
 [resource]
 script = ExtResource("1_a1r5i")
-score_dict = {}
+score_dict = {
+"Body Talk": 716638.0
+}

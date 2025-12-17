@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://de7c4ypug3da4"]
+[gd_scene load_steps=3 format=3 uid="uid://de7c4ypug3da4"]
 
 [ext_resource type="Script" path="res://scenes/lobby/lobby_select.gd" id="1_dl6rc"]
+[ext_resource type="Texture2D" uid="uid://beuw514d628ow" path="res://resources/music/M2U/bodytalk_album.png" id="2_xvj7e"]
 
 [node name="LobbySelect" type="Node2D"]
 script = ExtResource("1_dl6rc")
@@ -23,3 +24,39 @@ metadata/_edit_lock_ = true
 
 [node name="StageVContainer" type="VBoxContainer" parent="LobbySelectBackground/StageContainer"]
 layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="MusicAlbum" type="Sprite2D" parent="."]
+position = Vector2(252, 288)
+texture = ExtResource("2_xvj7e")
+metadata/_edit_lock_ = true
+
+[node name="MusicName" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 468.0
+offset_right = 432.0
+offset_bottom = 518.0
+theme_override_font_sizes/font_size = 30
+text = "Body Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScoreText" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 518.0
+offset_right = 252.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 30
+text = "Best Score :"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BestScore" type="Label" parent="."]
+offset_left = 252.0
+offset_top = 518.0
+offset_right = 432.0
+offset_bottom = 568.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1

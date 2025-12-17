@@ -233,3 +233,9 @@ func stage_end() -> void:
 	StageLoad.score_count = score_count
 	get_tree().change_scene_to_file("res://scenes/stage_end/stage_end.tscn")
 	pass
+
+
+func _on_quit_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/lobby/lobby_ui.tscn")
+	pass # Replace with function body.
