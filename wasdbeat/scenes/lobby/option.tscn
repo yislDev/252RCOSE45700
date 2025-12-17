@@ -186,19 +186,19 @@ position = Vector2(381, 473)
 scale = Vector2(0.8, 0.8)
 metadata/_edit_lock_ = true
 
-[node name="MusicOffsetText" type="Label" parent="."]
+[node name="NoteOffsetText" type="Label" parent="."]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 463.0
 offset_right = 878.0
 offset_bottom = 533.0
 theme_override_font_sizes/font_size = 50
-text = "Music Offset
+text = "Note Offset
 "
 metadata/_edit_lock_ = true
 
-[node name="MusicOffsetBox" parent="." instance=ExtResource("5_rghqd")]
-position = Vector2(900, 473)
+[node name="NoteOffsetBox" parent="." instance=ExtResource("5_rghqd")]
+position = Vector2(880, 473)
 scale = Vector2(0.8, 0.8)
 metadata/_edit_lock_ = true
 

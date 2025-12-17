@@ -1,0 +1,64 @@
+[gd_scene load_steps=14 format=3 uid="uid://73lmda2hvxdg"]
+
+[ext_resource type="Script" path="res://scenes/lobby/stage_button.gd" id="1_13n7v"]
+[ext_resource type="Texture2D" uid="uid://d4j65oiawc1wu" path="res://resources/music/M2U/artworks-XQlk1klbagsZ74zz-nyIdaQ-t500x500.png" id="2_vayi7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5on45"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3wu2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v75e8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_31jft"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g75p6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v8reb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6nmgk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rueoi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v1xoq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_upptf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_833j2"]
+
+[node name="StageButton" type="Node2D"]
+script = ExtResource("1_13n7v")
+
+[node name="StageButtonBackground" type="ColorRect" parent="."]
+offset_right = 584.0
+offset_bottom = 136.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="StageStart" type="Button" parent="."]
+offset_right = 584.0
+offset_bottom = 136.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5on45")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_o3wu2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_v75e8")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_31jft")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_g75p6")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_v8reb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_6nmgk")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_rueoi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_v1xoq")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_upptf")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_833j2")
+
+[node name="StageName" type="Label" parent="."]
+offset_left = 136.0
+offset_right = 584.0
+offset_bottom = 136.0
+theme_override_font_sizes/font_size = 30
+text = "Body Talk"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StageImage" type="Sprite2D" parent="."]
+position = Vector2(68, 68)
+texture = ExtResource("2_vayi7")
+
+[connection signal="pressed" from="StageStart" to="." method="button_pressed"]

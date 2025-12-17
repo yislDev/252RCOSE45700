@@ -49,8 +49,15 @@ var music_offset: float = 0.000
 
 var second_per_beat: float = 1.0
 
+var options: Options = null
+var option_note_appearance_offset: float = 0.0
+var option_input_offset: float = 0.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	options = Options.new().load_data()
+	option_input_offset = float(options.input_offset) / 100
+	option_note_appearance_offset = float(options.note_offset) / 100
+	
 	time_game_playing = -TIME_PLAYER_READY
 	player_location = Vector2(0,0)
 	player_index = 0
@@ -88,7 +95,7 @@ func music_ready() -> void:
 	score_of_perfect = 1000000 / note_count
 	
 	for i in music_note_list:
-		note_queue[i.panel].append(i.time * second_per_beat + music_offset)
+		note_queue[i.panel].append(i.time * second_per_beat + music_offset + option_note_appearance_offset)
 		#print(i.panel, i.time)
 	
 	var audio_manager: AudioManager = load("res://scenes/music/Audio/audio_manager.tscn").instantiate() as AudioManager
@@ -133,7 +140,7 @@ func _process(delta: float) -> void:
 	for i in range(16):
 		if (not note_current[i].is_empty()):
 			while((not note_current[i].is_empty()) \
-			and (time_game_playing - note_current[i][0] >= TIME_NOTE_TOO_LATE)):
+			and (time_game_playing - note_current[i][0] + option_input_offset >= TIME_NOTE_TOO_LATE)):
 				note_current[i].pop_front()
 				score_count[4] += 1
 				
@@ -183,7 +190,7 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 	print(note_current[player_index])
 	
 	if (not note_current[player_index].is_empty()):
-		cur_note_timing = time_at_input - note_current[player_index].pop_front()
+		cur_note_timing = time_at_input + option_input_offset - note_current[player_index].pop_front()
 		print(cur_note_timing)
 		if (abs(cur_note_timing) <= TIME_PERFECT):
 			note_score = NOTE_SCORE.PERFECT

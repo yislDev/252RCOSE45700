@@ -16,8 +16,8 @@ func _ready() -> void:
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"),linear_to_db(float($SoundEffectSlider.value))/100)
 	$InputOffsetBox.offset = option_data.input_offset
 	$InputOffsetBox.change_offset_fun()
-	$MusicOffsetBox.offset = option_data.music_offset
-	$MusicOffsetBox.change_offset_fun()
+	$NoteOffsetBox.offset = option_data.note_offset
+	$NoteOffsetBox.change_offset_fun()
 	pass
 	
 
@@ -27,7 +27,7 @@ func _on_done_pressed() -> void:
 	option_data.music_volume = $MusicSlider.value
 	option_data.effect_volume = $SoundEffectSlider.value
 	option_data.input_offset = $InputOffsetBox.offset
-	option_data.music_offset = $MusicOffsetBox.offset
+	option_data.note_offset = $NoteOffsetBox.offset
 	option_data.save_data()
 	option_done.emit()
 	pass # Replace with function body.

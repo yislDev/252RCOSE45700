@@ -3,11 +3,11 @@ class_name Options
 
 const PATH := "res://save/options.tres"
 
-@export var master_volume: int = 0
-@export var music_volume: int = 0
-@export var effect_volume: int = 0
+@export var master_volume: int = 100
+@export var music_volume: int = 100
+@export var effect_volume: int = 100
 @export var input_offset: int = 0
-@export var music_offset: int = 0
+@export var note_offset: int = 0
 
 func save_data() -> void:
 	ResourceSaver.save(self,PATH)
