@@ -8,4 +8,4 @@ master_volume = 100
 music_volume = 100
 effect_volume = 100
 input_offset = 0
-note_offset = 0
+note_offset = 16

@@ -95,7 +95,6 @@ func music_ready() -> void:
 	second_per_beat = bpm_to_spb(music_bpm)
 	
 	note_count = music_note_list.size()
-	score_of_perfect = 1000000 / note_count
 	
 	for i in music_note_list:
 		note_queue[i.panel].append(i.time * second_per_beat + music_offset + option_note_appearance_offset)
@@ -209,20 +208,18 @@ func _on_game_ui_request_move_player(dir: GameUI.DIR) -> void:
 				
 		match note_score:
 			NOTE_SCORE.PERFECT:
-				score += score_of_perfect
 				score_count[0] += 1
 			NOTE_SCORE.GREAT:
-				score += score_of_perfect * 0.9
 				score_count[1] += 1
 			NOTE_SCORE.GOOD:
-				score += score_of_perfect * 0.75
 				score_count[2] += 1
 			NOTE_SCORE.BAD:
-				score += score_of_perfect * 0.5
 				score_count[3] += 1
 			NOTE_SCORE.MISS:
 				score_count[4] += 1
 		request_remove_note.emit(player_index)
+		
+		_update_total_score()
 				
 	###플레이어 움직이기###
 	request_move_player.emit(player_location)
