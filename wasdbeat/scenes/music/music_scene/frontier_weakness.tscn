@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://d03yrcm6drs1w"]
+[gd_scene load_steps=92 format=3 uid="uid://d03yrcm6drs1w"]
 
 [ext_resource type="Script" path="res://scenes/music/music_scene/music_data.gd" id="1_aqhwu"]
 [ext_resource type="AudioStream" uid="uid://ii3jh8nrgvdb" path="res://resources/music/YISL/Frontier Weakness.mp3" id="2_caoru"]
@@ -144,6 +144,306 @@ script = ExtResource("3_n8i1o")
 time = 70.0
 panel = 2
 
+[sub_resource type="Resource" id="Resource_b2h7k"]
+script = ExtResource("3_n8i1o")
+time = 70.5
+panel = 14
+
+[sub_resource type="Resource" id="Resource_p16ud"]
+script = ExtResource("3_n8i1o")
+time = 70.75
+panel = 10
+
+[sub_resource type="Resource" id="Resource_lstgv"]
+script = ExtResource("3_n8i1o")
+time = 71.25
+panel = 9
+
+[sub_resource type="Resource" id="Resource_hrtj8"]
+script = ExtResource("3_n8i1o")
+time = 71.5
+panel = 8
+
+[sub_resource type="Resource" id="Resource_2ef3i"]
+script = ExtResource("3_n8i1o")
+time = 71.75
+panel = 11
+
+[sub_resource type="Resource" id="Resource_aos1n"]
+script = ExtResource("3_n8i1o")
+time = 72.0
+panel = 10
+
+[sub_resource type="Resource" id="Resource_qddm7"]
+script = ExtResource("3_n8i1o")
+time = 72.5
+panel = 6
+
+[sub_resource type="Resource" id="Resource_xucrp"]
+script = ExtResource("3_n8i1o")
+time = 72.75
+panel = 2
+
+[sub_resource type="Resource" id="Resource_rc3na"]
+script = ExtResource("3_n8i1o")
+time = 73.25
+panel = 1
+
+[sub_resource type="Resource" id="Resource_8wuh6"]
+script = ExtResource("3_n8i1o")
+time = 73.5
+panel = 0
+
+[sub_resource type="Resource" id="Resource_qis80"]
+script = ExtResource("3_n8i1o")
+time = 73.75
+panel = 3
+
+[sub_resource type="Resource" id="Resource_kp78i"]
+script = ExtResource("3_n8i1o")
+time = 74.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_wqt6x"]
+script = ExtResource("3_n8i1o")
+time = 74.5
+panel = 1
+
+[sub_resource type="Resource" id="Resource_wtwmi"]
+script = ExtResource("3_n8i1o")
+time = 74.75
+panel = 0
+
+[sub_resource type="Resource" id="Resource_w2uv7"]
+script = ExtResource("3_n8i1o")
+time = 75.25
+panel = 4
+
+[sub_resource type="Resource" id="Resource_qj3as"]
+script = ExtResource("3_n8i1o")
+time = 75.5
+panel = 8
+
+[sub_resource type="Resource" id="Resource_gpchh"]
+script = ExtResource("3_n8i1o")
+time = 75.75
+panel = 12
+
+[sub_resource type="Resource" id="Resource_udq67"]
+script = ExtResource("3_n8i1o")
+time = 76.0
+panel = 0
+
+[sub_resource type="Resource" id="Resource_xb102"]
+script = ExtResource("3_n8i1o")
+time = 76.5
+panel = 3
+
+[sub_resource type="Resource" id="Resource_l3twd"]
+script = ExtResource("3_n8i1o")
+time = 76.75
+panel = 2
+
+[sub_resource type="Resource" id="Resource_xxvhx"]
+script = ExtResource("3_n8i1o")
+time = 77.25
+panel = 6
+
+[sub_resource type="Resource" id="Resource_vs1db"]
+script = ExtResource("3_n8i1o")
+time = 77.5
+panel = 10
+
+[sub_resource type="Resource" id="Resource_g13qc"]
+script = ExtResource("3_n8i1o")
+time = 77.75
+panel = 14
+
+[sub_resource type="Resource" id="Resource_cyqwy"]
+script = ExtResource("3_n8i1o")
+time = 78.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_18dqe"]
+script = ExtResource("3_n8i1o")
+time = 78.5
+panel = 3
+
+[sub_resource type="Resource" id="Resource_xcbut"]
+script = ExtResource("3_n8i1o")
+time = 78.75
+panel = 0
+
+[sub_resource type="Resource" id="Resource_48w4t"]
+script = ExtResource("3_n8i1o")
+time = 79.25
+panel = 12
+
+[sub_resource type="Resource" id="Resource_gv5f0"]
+script = ExtResource("3_n8i1o")
+time = 79.5
+panel = 8
+
+[sub_resource type="Resource" id="Resource_ip75p"]
+script = ExtResource("3_n8i1o")
+time = 79.75
+panel = 4
+
+[sub_resource type="Resource" id="Resource_ekkx3"]
+script = ExtResource("3_n8i1o")
+time = 80.0
+panel = 0
+
+[sub_resource type="Resource" id="Resource_jtr8w"]
+script = ExtResource("3_n8i1o")
+time = 80.5
+panel = 1
+
+[sub_resource type="Resource" id="Resource_x6ioc"]
+script = ExtResource("3_n8i1o")
+time = 80.75
+panel = 2
+
+[sub_resource type="Resource" id="Resource_f3pss"]
+script = ExtResource("3_n8i1o")
+time = 81.25
+panel = 14
+
+[sub_resource type="Resource" id="Resource_s3i13"]
+script = ExtResource("3_n8i1o")
+time = 81.5
+panel = 10
+
+[sub_resource type="Resource" id="Resource_xyh5b"]
+script = ExtResource("3_n8i1o")
+time = 81.75
+panel = 6
+
+[sub_resource type="Resource" id="Resource_jnh7r"]
+script = ExtResource("3_n8i1o")
+time = 82.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_yfwba"]
+script = ExtResource("3_n8i1o")
+time = 82.5
+panel = 14
+
+[sub_resource type="Resource" id="Resource_7nds7"]
+script = ExtResource("3_n8i1o")
+time = 82.75
+panel = 10
+
+[sub_resource type="Resource" id="Resource_abej2"]
+script = ExtResource("3_n8i1o")
+time = 83.25
+panel = 9
+
+[sub_resource type="Resource" id="Resource_h7l26"]
+script = ExtResource("3_n8i1o")
+time = 83.5
+panel = 13
+
+[sub_resource type="Resource" id="Resource_yxcjs"]
+script = ExtResource("3_n8i1o")
+time = 83.75
+panel = 14
+
+[sub_resource type="Resource" id="Resource_m0rs1"]
+script = ExtResource("3_n8i1o")
+time = 84.0
+panel = 10
+
+[sub_resource type="Resource" id="Resource_m5u4b"]
+script = ExtResource("3_n8i1o")
+time = 84.5
+panel = 6
+
+[sub_resource type="Resource" id="Resource_8bw6e"]
+script = ExtResource("3_n8i1o")
+time = 84.75
+panel = 2
+
+[sub_resource type="Resource" id="Resource_ah3el"]
+script = ExtResource("3_n8i1o")
+time = 85.25
+panel = 1
+
+[sub_resource type="Resource" id="Resource_5bmce"]
+script = ExtResource("3_n8i1o")
+time = 85.5
+panel = 5
+
+[sub_resource type="Resource" id="Resource_adsqu"]
+script = ExtResource("3_n8i1o")
+time = 85.75
+panel = 6
+
+[sub_resource type="Resource" id="Resource_470d1"]
+script = ExtResource("3_n8i1o")
+time = 86.0
+panel = 2
+
+[sub_resource type="Resource" id="Resource_ah86i"]
+script = ExtResource("3_n8i1o")
+time = 86.5
+panel = 14
+
+[sub_resource type="Resource" id="Resource_ne2js"]
+script = ExtResource("3_n8i1o")
+time = 86.75
+panel = 10
+
+[sub_resource type="Resource" id="Resource_dytlx"]
+script = ExtResource("3_n8i1o")
+time = 87.25
+panel = 11
+
+[sub_resource type="Resource" id="Resource_4xds1"]
+script = ExtResource("3_n8i1o")
+time = 87.5
+panel = 15
+
+[sub_resource type="Resource" id="Resource_kus1o"]
+script = ExtResource("3_n8i1o")
+time = 87.75
+panel = 14
+
+[sub_resource type="Resource" id="Resource_yvtbw"]
+script = ExtResource("3_n8i1o")
+time = 88.0
+panel = 10
+
+[sub_resource type="Resource" id="Resource_vrq3w"]
+script = ExtResource("3_n8i1o")
+time = 88.5
+panel = 6
+
+[sub_resource type="Resource" id="Resource_1ulfk"]
+script = ExtResource("3_n8i1o")
+time = 88.75
+panel = 2
+
+[sub_resource type="Resource" id="Resource_rah1d"]
+script = ExtResource("3_n8i1o")
+time = 89.25
+panel = 3
+
+[sub_resource type="Resource" id="Resource_ggvwu"]
+script = ExtResource("3_n8i1o")
+time = 89.5
+panel = 7
+
+[sub_resource type="Resource" id="Resource_a1vpt"]
+script = ExtResource("3_n8i1o")
+time = 89.75
+panel = 6
+
+[sub_resource type="Resource" id="Resource_54fog"]
+script = ExtResource("3_n8i1o")
+time = 90.0
+panel = 2
+
 [node name="FrontierWeakness" type="Control"]
 process_mode = 1
 layout_mode = 3
@@ -152,6 +452,6 @@ script = ExtResource("1_aqhwu")
 bpm = 106.667
 music = ExtResource("2_caoru")
 artists = "YISL"
-note_list = Array[ExtResource("3_n8i1o")]([SubResource("Resource_1sv2f"), SubResource("Resource_q48d0"), SubResource("Resource_g0sn7"), SubResource("Resource_mgkd7"), SubResource("Resource_x1ldl"), SubResource("Resource_wool6"), SubResource("Resource_dxhv1"), SubResource("Resource_anlni"), SubResource("Resource_66nx4"), SubResource("Resource_5wq3v"), SubResource("Resource_0abtd"), SubResource("Resource_vl54t"), SubResource("Resource_xeqpg"), SubResource("Resource_3j3sw"), SubResource("Resource_imgwm"), SubResource("Resource_158tc"), SubResource("Resource_qeec3"), SubResource("Resource_kum2l"), SubResource("Resource_b4ng1"), SubResource("Resource_7ulcj"), SubResource("Resource_osaw4"), SubResource("Resource_hs8vl"), SubResource("Resource_fc7n2"), SubResource("Resource_sh3r1"), SubResource("Resource_twfkr"), SubResource("Resource_rdtol"), SubResource("Resource_ptkc3"), SubResource("Resource_7iysk")])
-end_of_song = 120.0
+note_list = Array[ExtResource("3_n8i1o")]([SubResource("Resource_1sv2f"), SubResource("Resource_q48d0"), SubResource("Resource_g0sn7"), SubResource("Resource_mgkd7"), SubResource("Resource_x1ldl"), SubResource("Resource_wool6"), SubResource("Resource_dxhv1"), SubResource("Resource_anlni"), SubResource("Resource_66nx4"), SubResource("Resource_5wq3v"), SubResource("Resource_0abtd"), SubResource("Resource_vl54t"), SubResource("Resource_xeqpg"), SubResource("Resource_3j3sw"), SubResource("Resource_imgwm"), SubResource("Resource_158tc"), SubResource("Resource_qeec3"), SubResource("Resource_kum2l"), SubResource("Resource_b4ng1"), SubResource("Resource_7ulcj"), SubResource("Resource_osaw4"), SubResource("Resource_hs8vl"), SubResource("Resource_fc7n2"), SubResource("Resource_sh3r1"), SubResource("Resource_twfkr"), SubResource("Resource_rdtol"), SubResource("Resource_ptkc3"), SubResource("Resource_7iysk"), SubResource("Resource_b2h7k"), SubResource("Resource_p16ud"), SubResource("Resource_lstgv"), SubResource("Resource_hrtj8"), SubResource("Resource_2ef3i"), SubResource("Resource_aos1n"), SubResource("Resource_qddm7"), SubResource("Resource_xucrp"), SubResource("Resource_rc3na"), SubResource("Resource_8wuh6"), SubResource("Resource_qis80"), SubResource("Resource_kp78i"), SubResource("Resource_wqt6x"), SubResource("Resource_wtwmi"), SubResource("Resource_w2uv7"), SubResource("Resource_qj3as"), SubResource("Resource_gpchh"), SubResource("Resource_udq67"), SubResource("Resource_xb102"), SubResource("Resource_l3twd"), SubResource("Resource_xxvhx"), SubResource("Resource_vs1db"), SubResource("Resource_g13qc"), SubResource("Resource_cyqwy"), SubResource("Resource_18dqe"), SubResource("Resource_xcbut"), SubResource("Resource_48w4t"), SubResource("Resource_gv5f0"), SubResource("Resource_ip75p"), SubResource("Resource_ekkx3"), SubResource("Resource_jtr8w"), SubResource("Resource_x6ioc"), SubResource("Resource_f3pss"), SubResource("Resource_s3i13"), SubResource("Resource_xyh5b"), SubResource("Resource_jnh7r"), SubResource("Resource_yfwba"), SubResource("Resource_7nds7"), SubResource("Resource_abej2"), SubResource("Resource_h7l26"), SubResource("Resource_yxcjs"), SubResource("Resource_m0rs1"), SubResource("Resource_m5u4b"), SubResource("Resource_8bw6e"), SubResource("Resource_ah3el"), SubResource("Resource_5bmce"), SubResource("Resource_adsqu"), SubResource("Resource_470d1"), SubResource("Resource_ah86i"), SubResource("Resource_ne2js"), SubResource("Resource_dytlx"), SubResource("Resource_4xds1"), SubResource("Resource_kus1o"), SubResource("Resource_yvtbw"), SubResource("Resource_vrq3w"), SubResource("Resource_1ulfk"), SubResource("Resource_rah1d"), SubResource("Resource_ggvwu"), SubResource("Resource_a1vpt"), SubResource("Resource_54fog")])
+end_of_song = 230.0
 offset = 0.025
